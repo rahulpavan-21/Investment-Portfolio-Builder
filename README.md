@@ -4,54 +4,6 @@
 
 Investment Portfolio Builder is a Python library that provides portfolio optimization methods, including classical mean-variance optimization techniques, Black-Litterman allocation, and more recent developments like shrinkage and Hierarchical Risk Parity. It is both extensive and easily extensible, making it useful for casual investors and professionals looking for a prototyping tool. Whether you are a fundamentals-oriented investor or an algorithmic trader, Investment Portfolio Builder can help you combine your alpha sources in a risk-efficient way.
 
-## Getting started
-
-Instructions:
-
-_Note: macOS users will need to install [Command Line Tools](https://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)._
-
-_Note: if you are on windows, you first need to installl C++. ([download](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16), [install instructions](https://drive.google.com/file/d/0B4GsMXCRaSSIOWpYQkstajlYZ0tPVkNQSElmTWh1dXFaYkJr/view))_
-
-This project is available on PyPI, meaning that you can just:
-
-```bash
-pip install PyPortfolioOpt
-```
-
-(you may need to follow separate installation instructions for [cvxopt](https://cvxopt.org/install/index.html#) and [cvxpy](https://www.cvxpy.org/install/)).
-
-However, it is best practice to use a dependency manager within a virtual environment.
-My current recommendation is to get yourself set up with [poetry](https://github.com/sdispater/poetry) then just run
-
-```bash
-poetry add PyPortfolioOpt
-```
-
-Otherwise, clone/download the project and in the project directory run:
-
-```bash
-python setup.py install
-```
-
-PyPortfolioOpt supports Docker. Build your first container with `docker build -f docker/Dockerfile . -t pypfopt`. You can use the image to run tests or even launch a Jupyter server.
-
-```bash
-# iPython interpreter:
-docker run -it pypfopt poetry run ipython
-
-# Jupyter notebook server:
-docker run -it -p 8888:8888 pypfopt poetry run jupyter notebook --allow-root --no-browser --ip 0.0.0.0
-# click on http://127.0.0.1:8888/?token=xxx
-
-# Pytest
-docker run -t pypfopt poetry run pytest
-
-# Bash
-docker run -it pypfopt bash
-```
-
-For more information, please read [this guide](https://docker-curriculum.com/#introduction).
-
 
 
 ## A quick example
